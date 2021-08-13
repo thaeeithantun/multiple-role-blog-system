@@ -22,7 +22,7 @@ class UserController extends BaseController
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
             'role' => 'required'
@@ -61,7 +61,8 @@ class UserController extends BaseController
 
         $validator = Validator::make($input, [
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required|unique:users,email,'.$user->id,
+        
         ]);
 
         if ($validator->fails()) {
