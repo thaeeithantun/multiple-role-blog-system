@@ -8,3 +8,13 @@
 </p>
 
 
+1. Get this project from Github (git clone).
+2. Copy ".env.example" file and rename to ".env". Edit the .env file (connect to DB).
+3. Run "composer install".
+4. Run "php artisan key:generate". It will add application key to the .env file.
+5. Run "php artisan migrate" Laravel Migrations.
+6. Run "php artisan db:seed" Laravel Seeding.
+7. Run "php artisan serve".
+You can find Login Credentials (email, password) inside UsersTableSeeder class.
+Route for Swagger API is /api/documentation.
+
